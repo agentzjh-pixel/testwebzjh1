@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网站</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">AboutMe.</div>
+        <nav class="nav">
+            <a href="#home" class="nav-link active" data-section="home">首页</a>
+            <a href="#about" class="nav-link" data-section="about">关于我</a>
+            <a href="#articles" class="nav-link" data-section="articles">我的文章</a>
+            <a href="#works" class="nav-link" data-section="works">我的作品</a>
+            <a href="#apps" class="nav-link" data-section="apps">我的应用</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <p class="greeting">Hello, Welcome</p>
+                    <h1 class="hero-title">我是 <span class="highlight">开发者</span></h1>
+                    <p class="hero-description">
+                        这里是我的个人空间，分享我的想法、作品和经历。
+                        热爱技术，享受创造，追求卓越。
+                    </p>
+                    <button class="btn">联系我</button>
+                </div>
+                <div class="hero-image">
+                    <div class="avatar-placeholder">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="about-container">
+                <div class="about-image">
+                    <div class="about-img-placeholder">
+                        <div class="img-box">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h2 class="section-title">关于 <span class="highlight">我</span></h2>
+                    <p class="about-description">
+                        我是一名热爱技术的开发者，专注于创建优雅且实用的数字产品。
+                        在这里，你可以了解更多关于我的故事。
+                    </p>
+                    <p class="about-description">
+                        我相信好的设计和优秀的代码可以改变世界，
+                        每一个项目都是一次学习和成长的机会。
+                    </p>
+                    <button class="btn">了解更多</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="articles" class="section">
+            <div class="articles-container">
+                <h2 class="section-title center">我的 <span class="highlight">文章</span></h2>
+                <p class="section-description center">
+                    分享我的技术心得、生活感悟和学习笔记
+                </p>
+                <div class="articles-grid">
+                    <article class="article-card">
+                        <div class="article-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3 class="article-title">技术分享</h3>
+                        <p class="article-description">
+                            深入探讨前端开发技术，分享实用的开发技巧和最佳实践。
+                        </p>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="article-title">代码笔记</h3>
+                        <p class="article-description">
+                            记录学习过程中的点滴，包括算法、数据结构和编程思想。
+                        </p>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="article-title">设计思考</h3>
+                        <p class="article-description">
+                            关于用户体验、界面设计和产品思维的一些想法和总结。
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="works" class="section">
+            <div class="works-container">
+                <h2 class="section-title center">我的 <span class="highlight">作品</span></h2>
+                <p class="section-description center">
+                    展示我参与和独立完成的项目
+                </p>
+                <div class="works-grid">
+                    <div class="work-item">
+                        <div class="work-img">
+                            <i class="fas fa-image"></i>
+                        </div>
+                    </div>
+                    <div class="work-item">
+                        <div class="work-img">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                    </div>
+                    <div class="work-item">
+                        <div class="work-img">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <div class="work-item">
+                        <div class="work-img">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                    </div>
+                    <div class="work-item">
+                        <div class="work-img">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="apps" class="section">
+            <div class="apps-container">
+                <h2 class="section-title center">我的 <span class="highlight">应用</span></h2>
+                <p class="section-description center">
+                    我常用的软件安装包
+                </p>
+                <div class="apps-grid">
+                    <div class="app-card">
+                        <div class="app-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="app-title">开发工具</h3>
+                        <p class="app-description">
+                            VS Code, Sublime Text, GitHub Desktop 等
+                        </p>
+                        <button class="btn app-btn">查看列表</button>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3 class="app-title">设计软件</h3>
+                        <p class="app-description">
+                            Photoshop, Illustrator, Figma 等
+                        </p>
+                        <button class="btn app-btn">查看列表</button>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="app-title">视频工具</h3>
+                        <p class="app-description">
+                            Premiere Pro, After Effects, Handbrake 等
+                        </p>
+                        <button class="btn app-btn">查看列表</button>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="app-title">系统工具</h3>
+                        <p class="app-description">
+                            CleanMyMac, Alfred, Rectangle 等
+                        </p>
+                        <button class="btn app-btn">查看列表</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h2 class="section-title">联系 <span class="highlight">我</span></h2>
+            <p class="section-description center">
+                如果你对我的作品感兴趣，或者有任何想法想要交流
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-label">地址</span>
+                    <span>中国 · 北京</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">邮箱</span>
+                    <span>Agentzjh@163.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">电话</span>
+                    <span>+86 123 4567 8900</span>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="姓名" class="form-input">
+                <textarea placeholder="留言" class="form-textarea"></textarea>
+                <button type="submit" class="btn">发送消息</button>
+            </form>
+        </div>
+        <div class="footer-bottom">
+            <div class="logo">AboutMe.</div>
+            <p class="copyright">© 2026 个人网站. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
