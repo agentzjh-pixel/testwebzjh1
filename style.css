@@ -136,6 +136,14 @@ body {
     justify-content: center;
 }
 
+.hero-avatar {
+    width: 400px;
+    height: 400px;
+    border-radius: 30px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
 .avatar-placeholder {
     width: 400px;
     height: 400px;
@@ -418,7 +426,8 @@ body {
     }
 
     .avatar-placeholder,
-    .img-box {
+    .img-box,
+    .hero-avatar {
         width: 300px;
         height: 300px;
         font-size: 6rem;
