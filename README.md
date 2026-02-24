@@ -1,2 +1,4 @@
-[index.html](https://github.com/user-attachments/files/25508930/index.html)
-[script.js](https://github.com/user-attachments/files/25508932/script.js)[style.css](https://github.com/user-attachments/files/25508933/style.css)
+cd /Users/meiyouxiaoxiong/Documents/trae_projects
+git add .
+git commit -m "更新网站信息：修改标题、名称和地址"
+git push origin main
