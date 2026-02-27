@@ -72,7 +72,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const url = `${JSONBIN_API}/b/${designNotesConfig.binId}/latest`;
 
-        fetch(url)
+        fetch(url, {
+            headers: {
+                'X-Master-Key': designNotesConfig.apiKey
+            }
+        })
             .then(response => {
                 console.log('Response status:', response.status);
                 return response.json();
