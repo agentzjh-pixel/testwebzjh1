@@ -322,6 +322,186 @@ body {
     width: 100%;
 }
 
+.forum-container {
+    min-height: calc(100vh - 160px);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.forum-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.back-btn {
+    background: none;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+.comments-list {
+    margin-top: 2rem;
+}
+
+.comment-card {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--accent);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.comment-card:hover {
+    transform: translateX(5px);
+}
+
+.comment-card.selected {
+    border-left-color: #e74c3c;
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+.comment-author {
+    font-weight: bold;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.comment-date {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+}
+
+.comment-content {
+    color: var(--text-primary);
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.add-comment-form {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.add-comment-form h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.add-comment-form input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--bg-dark-alt);
+    border-radius: 8px;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.add-comment-form input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.add-comment-form textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--bg-dark-alt);
+    border-radius: 8px;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 100px;
+    transition: border-color 0.3s ease;
+}
+
+.add-comment-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.add-comment-form .btn {
+    width: 100%;
+    padding: 0.875rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.admin-panel {
+    background-color: var(--bg-card);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border: 1px dashed var(--text-secondary);
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.admin-panel:hover {
+    opacity: 1;
+}
+
+.admin-panel h3 {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.admin-panel input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--bg-dark-alt);
+    border-radius: 6px;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.admin-panel .btn-danger {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
 .section-description {
     color: var(--text-secondary);
     text-align: center;
@@ -331,6 +511,155 @@ body {
 
 .section-description.center {
     text-align: center;
+}
+
+.news-container {
+    min-height: calc(100vh - 160px);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.news-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.news-tab {
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--accent);
+    background: transparent;
+    color: var(--text-primary);
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.news-tab:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+.news-tab.active {
+    background: var(--accent);
+    color: var(--bg-dark);
+    font-weight: 600;
+}
+
+.news-list {
+    margin-top: 1.5rem;
+}
+
+.news-item {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--accent);
+    transition: transform 0.3s ease;
+}
+
+.news-item:hover {
+    transform: translateX(5px);
+}
+
+.news-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.news-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.news-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.news-source {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.news-date {
+    color: var(--text-secondary);
+}
+
+.news-score {
+    color: var(--text-secondary);
+    margin-left: 0.5rem;
+}
+
+.news-summary {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.news-refresh {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.news-refresh .btn {
+    padding: 0.75rem 2rem;
+}
+
+.news-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--text-primary);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.page-btn:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+.page-btn.active {
+    background: var(--accent);
+    color: var(--bg-dark);
+    font-weight: 600;
+}
+
+.page-dots {
+    color: var(--text-secondary);
+    padding: 0 0.25rem;
+}
+
+.news-error {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 3rem;
 }
 
 .articles-grid {

@@ -14,7 +14,6 @@
             <a href="#home" class="nav-link active" data-section="home">首页</a>
             <a href="#about" class="nav-link" data-section="about">关于我</a>
             <a href="#articles" class="nav-link" data-section="articles">我的文章</a>
-            <a href="#design-notes" class="nav-link" data-section="design-notes">设计思考</a>
             <a href="#works" class="nav-link" data-section="works">我的作品</a>
             <a href="#apps" class="nav-link" data-section="apps">我的应用</a>
         </nav>
@@ -67,7 +66,7 @@
                     分享我的技术心得、生活感悟和学习笔记
                 </p>
                 <div class="articles-grid">
-                    <article class="article-card">
+                    <article class="article-card" data-section="tech-sharing">
                         <div class="article-icon">
                             <i class="fas fa-bullhorn"></i>
                         </div>
@@ -94,6 +93,15 @@
                             关于用户体验、界面设计和产品思维的一些想法和总结。
                         </p>
                     </article>
+                    <article class="article-card" data-section="frontier-learning">
+                        <div class="article-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="article-title">他山之石</h3>
+                        <p class="article-description">
+                            探索最新技术趋势，持续学习和成长。
+                        </p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -112,6 +120,51 @@
                     <textarea id="note-content" placeholder="写下你的想法..." rows="4"></textarea>
                     <input type="password" id="admin-password" placeholder="管理密码">
                     <button class="btn" id="add-note-btn">发布笔记</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech-forum" class="section">
+            <div class="forum-container">
+                <div class="forum-header">
+                    <button class="back-btn" id="back-to-articles">← 返回</button>
+                    <h2 class="section-title">技术分享 <span class="highlight">讨论区</span></h2>
+                </div>
+                <p class="section-description center">
+                    欢迎分享您的技术见解，互相学习交流
+                </p>
+                <div class="comments-list" id="comments-list">
+                    <div class="loading">加载中...</div>
+                </div>
+                <div class="add-comment-form">
+                    <h3>发表评论</h3>
+                    <input type="text" id="comment-author" placeholder="您的昵称">
+                    <textarea id="comment-content" placeholder="写下您的评论..." rows="4"></textarea>
+                    <button class="btn" id="add-comment-btn">发布评论</button>
+                </div>
+                <div class="admin-panel" id="forum-admin-panel">
+                    <h3>管理员操作</h3>
+                    <input type="password" id="forum-admin-password" placeholder="管理密码">
+                    <button class="btn btn-danger" id="delete-comment-btn">删除选中的评论</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="frontier-learning" class="section">
+            <div class="news-container">
+                <div class="forum-header">
+                    <button class="back-btn" id="back-to-articles-news">← 返回</button>
+                    <h2 class="section-title">他山之石 <span class="highlight">AI资讯</span></h2>
+                </div>
+                <p class="section-description center">
+                    每日更新，汇集全球AI最新动态
+                </p>
+                <div class="news-list" id="news-list">
+                    <div class="loading">加载中...</div>
+                </div>
+                <div class="news-pagination" id="news-pagination"></div>
+                <div class="news-refresh">
+                    <button class="btn" id="refresh-news">🔄 刷新新闻</button>
                 </div>
             </div>
         </section>
