@@ -14,6 +14,7 @@
             <a href="#home" class="nav-link active" data-section="home">首页</a>
             <a href="#about" class="nav-link" data-section="about">关于我</a>
             <a href="#articles" class="nav-link" data-section="articles">我的文章</a>
+            <a href="#design-notes" class="nav-link" data-section="design-notes">设计思考</a>
             <a href="#works" class="nav-link" data-section="works">我的作品</a>
             <a href="#apps" class="nav-link" data-section="apps">我的应用</a>
         </nav>
@@ -32,7 +33,7 @@
                     <button class="btn">联系我</button>
                 </div>
                 <div class="hero-image">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cartoon%20style%20portrait%20of%20a%20young%20man%20with%20short%20dark%20hair%20and%20brown%20eyes%20on%20yellow%20background&image_size=square_hd" alt="奥特蛋" class="hero-avatar">
+                    <img src="images/avatar.png" alt="奥特蛋" class="hero-avatar" title="你好呀！我是奥特蛋 👋">
                 </div>
             </div>
         </section>
@@ -41,9 +42,7 @@
             <div class="about-container">
                 <div class="about-image">
                     <div class="about-img-placeholder">
-                        <div class="img-box">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
+                        <img src="images/about.png" alt="关于我" class="about-photo">
                     </div>
                 </div>
                 <div class="about-content">
@@ -86,7 +85,7 @@
                             记录学习过程中的点滴，包括算法、数据结构和编程思想。
                         </p>
                     </article>
-                    <article class="article-card">
+                    <article class="article-card" data-section="design-notes">
                         <div class="article-icon">
                             <i class="fas fa-palette"></i>
                         </div>
@@ -95,6 +94,24 @@
                             关于用户体验、界面设计和产品思维的一些想法和总结。
                         </p>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="design-notes" class="section">
+            <div class="design-notes-container">
+                <h2 class="section-title center">设计 <span class="highlight">思考</span></h2>
+                <p class="section-description center">
+                    关于用户体验、界面设计和产品思维的一些想法和总结
+                </p>
+                <div class="notes-list" id="notes-list">
+                    <div class="loading">加载中...</div>
+                </div>
+                <div class="add-note-form" id="admin-panel">
+                    <h3>添加新笔记</h3>
+                    <textarea id="note-content" placeholder="写下你的想法..." rows="4"></textarea>
+                    <input type="password" id="admin-password" placeholder="管理密码">
+                    <button class="btn" id="add-note-btn">发布笔记</button>
                 </div>
             </div>
         </section>
