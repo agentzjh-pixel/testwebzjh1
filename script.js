@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const designNotesConfig = {
-        binId: '69a11284d0ea881f40ddbe37',
+        binId: '69a11bf3ae596e708f4e35d3',
         apiKey: '$2a$10$QRufcwmxTvmyzZTZpgiyi.85OJvI/JByah95WIOTmmhs.iyGNgxOS',
         adminPassword: 'aotuodan'
     };
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         fetch(url, {
             headers: {
-                'X-Master-Key': designNotesConfig.apiKey
+                'X-Access-Key': designNotesConfig.apiKey
             }
         })
             .then(response => {
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fetch(`${JSONBIN_API}/b/${designNotesConfig.binId}/latest`, {
                 method: 'GET',
                 headers: {
-                    'X-Master-Key': designNotesConfig.apiKey
+                    'X-Access-Key': designNotesConfig.apiKey
                 }
             })
             .then(response => response.json())
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return fetch(`${JSONBIN_API}/b/${designNotesConfig.binId}`, {
                     method: 'PUT',
                     headers: {
-                        'X-Master-Key': designNotesConfig.apiKey,
+                        'X-Access-Key': designNotesConfig.apiKey,
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({ notes: notes })
