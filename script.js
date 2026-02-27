@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const designNotesConfig = {
-        binId: '69a10d9843b1c97be9a2449b',
+        binId: '69a11284d0ea881f40ddbe37',
         apiKey: '$2a$10$QRufcwmxTvmyzZTZpgiyi.85OJvI/JByah95WIOTmmhs.iyGNgxOS',
         adminPassword: 'aotuodan'
     };
