@@ -73,17 +73,27 @@ document.addEventListener('DOMContentLoaded', function() {
         const url = `${JSONBIN_API}/b/${designNotesConfig.binId}/latest`;
 
         fetch(url)
-            .then(response => response.json())
+            .then(response => {
+                console.log('Response status:', response.status);
+                return response.json();
+            })
             .then(data => {
-                console.log('Fetched data:', data);
+                console.log('Full response data:', JSON.stringify(data));
                 let notes = [];
-                if (data.record && data.record.notes) {
-                    notes = data.record.notes;
-                } else if (Array.isArray(data.record)) {
-                    notes = data.record;
-                } else if (data.record) {
-                    notes = [data.record];
+                
+                if (data.record) {
+                    if (Array.isArray(data.record)) {
+                        notes = data.record;
+                    } else if (data.record.notes && Array.isArray(data.record.notes)) {
+                        notes = data.record.notes;
+                    } else if (typeof data.record === 'object') {
+                        notes = Object.values(data.record).filter(item => 
+                            item && typeof item === 'object' && item.content
+                        );
+                    }
                 }
+                
+                console.log('Parsed notes:', notes);
                 displayNotes(notes);
             })
             .catch(error => {
@@ -96,7 +106,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const notesList = document.getElementById('notes-list');
         if (!notesList) return;
 
-        if (!notes || notes.length === 0) {
+        console.log('displayNotes received:', notes);
+        
+        if (!notes || !Array.isArray(notes) || notes.length === 0) {
             notesList.innerHTML = '<div class="no-notes">暂无笔记，快去添加吧！</div>';
             return;
         }
@@ -182,14 +194,17 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 console.log('Add note - fetched data:', data);
                 let notes = [];
-                if (data.record && data.record.notes) {
-                    notes = data.record.notes;
-                } else if (Array.isArray(data.record)) {
-                    notes = data.record;
-                } else if (!data.record || (typeof data.record === 'object' && Object.keys(data.record).length === 0)) {
-                    notes = [];
-                } else {
-                    notes = [data.record];
+                
+                if (data.record) {
+                    if (Array.isArray(data.record)) {
+                        notes = data.record;
+                    } else if (data.record.notes && Array.isArray(data.record.notes)) {
+                        notes = data.record.notes;
+                    } else if (typeof data.record === 'object') {
+                        notes = Object.values(data.record).filter(item => 
+                            item && typeof item === 'object' && item.content
+                        );
+                    }
                 }
 
                 const newNote = {
