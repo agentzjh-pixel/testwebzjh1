@@ -65,11 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const JSONBIN_API = 'https://api.jsonbin.io/v3';
-    const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
-
-    function fetchWithProxy(url, options = {}) {
-        return fetch(CORS_PROXY + encodeURIComponent(url), options);
-    }
 
     function fetchNotes() {
         const notesList = document.getElementById('notes-list');
@@ -77,10 +72,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const url = `${JSONBIN_API}/b/${designNotesConfig.binId}/latest`;
 
-        fetchWithProxy(url)
+        fetch(url)
             .then(response => response.json())
             .then(data => {
-                const notes = data.record.notes || [];
+                console.log('Fetched data:', data);
+                let notes = [];
+                if (data.record && data.record.notes) {
+                    notes = data.record.notes;
+                } else if (Array.isArray(data.record)) {
+                    notes = data.record;
+                } else if (data.record) {
+                    notes = [data.record];
+                }
                 displayNotes(notes);
             })
             .catch(error => {
@@ -177,7 +180,17 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => response.json())
             .then(data => {
-                const notes = data.record.notes || [];
+                console.log('Add note - fetched data:', data);
+                let notes = [];
+                if (data.record && data.record.notes) {
+                    notes = data.record.notes;
+                } else if (Array.isArray(data.record)) {
+                    notes = data.record;
+                } else if (!data.record || (typeof data.record === 'object' && Object.keys(data.record).length === 0)) {
+                    notes = [];
+                } else {
+                    notes = [data.record];
+                }
 
                 const newNote = {
                     id: Date.now(),
