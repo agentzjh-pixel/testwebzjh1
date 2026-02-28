@@ -731,6 +731,37 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
+    document.querySelectorAll('.work-item[data-work="game"]').forEach(item => {
+        item.addEventListener('click', function() {
+            navLinks.forEach(l => l.classList.remove('active'));
+            sections.forEach(s => s.classList.remove('active'));
+            
+            const worksLink = Array.from(navLinks).find(l => l.getAttribute('data-section') === 'works');
+            const gameSection = document.getElementById('game');
+            
+            if (worksLink) worksLink.classList.add('active');
+            if (gameSection) gameSection.classList.add('active');
+            
+            document.querySelector('.footer').style.display = 'none';
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+
+    document.getElementById('back-to-works')?.addEventListener('click', function() {
+        navLinks.forEach(l => l.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+        
+        const worksLink = Array.from(navLinks).find(l => l.getAttribute('data-section') === 'works');
+        const worksSection = document.getElementById('works');
+        
+        if (worksLink) worksLink.classList.add('active');
+        if (worksSection) worksSection.classList.add('active');
+        
+        document.querySelector('.footer').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
     function initNews() {
         const newsSection = document.getElementById('frontier-learning');
         if (newsSection) {
